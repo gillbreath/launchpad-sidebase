@@ -1,5 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+
+const baseUrlAuthSuffix = '/api/auth';
+
 export default defineNuxtConfig({
+  auth: {
+    baseURL: process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}${baseUrlAuthSuffix}` : `http://localhost:3000${baseUrlAuthSuffix}`
+  },
   modules: [
     '@nuxtjs/tailwindcss',
     '@bg-dev/nuxt-naiveui',

@@ -12,7 +12,7 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare && npx prisma generate"
   },
   "dependencies": {
     "superjson": "^2.2.2",
