@@ -13,8 +13,8 @@ const examples = [
 async function main() {
   console.info('Seeding examples table…')
 
-  for (const data of examples) {
-    const example = await prisma.example.create({ data })
+  const created = await Promise.all(examples.map(data => prisma.example.create({ data })))
+  for (const example of created) {
     console.info(`Created example ${example.id}`)
   }
 

@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
-const baseUrlAuthSuffix = '/api/auth';
+const baseUrlAuthSuffix = '/api/auth'
 
 export default defineNuxtConfig({
   auth: {
