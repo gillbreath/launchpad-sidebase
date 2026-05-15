@@ -26,3 +26,12 @@ model Example {
   id          String @id @default(uuid())
   details     String
 }
+
+model Blog {
+  id          String    @id @default(uuid())
+  createdAt   DateTime  @default(now())
+  publishedAt DateTime?
+  title       String
+  body        String
+  author      String
+}
