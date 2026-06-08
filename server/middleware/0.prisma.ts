@@ -10,9 +10,11 @@ declare module 'h3' {
 }
 
 export default eventHandler((event) => {
-console.log('server middleware')
   if (!prisma) {
-    const adapter = new PrismaPg({ connectionString: process.env.DATABASE_URL })
+    const adapter = new PrismaPg({
+      connectionString: process.env.DATABASE_URL,
+      ssl: true
+    })
     prisma = new PrismaClient({ adapter })
   }
   event.context.prisma = prisma
