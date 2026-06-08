@@ -2,7 +2,7 @@ import { writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 
-const CERT_PATH = join(tmpdir(), 'database-ca.pem')
+const CERT_PATH = join(tmpdir(), 'ca-certificate.crt')
 
 // In production the database CA certificate is provided via the `DATABASE_CA_CERT`
 // env var (its content can't be referenced by path directly). We write it to disk
