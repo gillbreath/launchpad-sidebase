@@ -10,7 +10,8 @@ const CERT_PATH = join(tmpdir(), 'database-ca.pem')
 // reads `sslrootcert`/`sslmode` and overrides whatever `ssl` option the adapter was
 // constructed with, so this is enough to enable a verified SSL connection.
 export default defineNitroPlugin(() => {
-console.log('server plugin')
+console.log('server plugin', process.env.NODE_ENV)
+console.log('DB cert path', CERT_PATH)
   if (process.env.NODE_ENV !== 'production') {
     return
   }
@@ -21,7 +22,7 @@ console.log('server plugin')
     return
   }
 
-console.log('DB cert vars', CERT_PATH, cert)
   writeFileSync(CERT_PATH, cert)
 
+console.log('writeFileSync')
 })
