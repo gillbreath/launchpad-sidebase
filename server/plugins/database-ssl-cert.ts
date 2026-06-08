@@ -16,8 +16,9 @@ console.log('DB cert path', CERT_PATH)
     return
   }
 
-  const cert = process.env.DATABASE_CA_CERT
+  const cert = process.env.CA_CERT
   const databaseUrl = process.env.DATABASE_URL
+console.log('cert vars', cert, databaseUrl)
   if (!cert || !databaseUrl) {
     return
   }
