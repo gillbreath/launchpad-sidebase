@@ -31,3 +31,6 @@ pgliteHealthz
 prisma/schema_old.prisma
 prisma/enums
 prisma/client
+
+# Storage
+tmp
