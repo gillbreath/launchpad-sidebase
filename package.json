@@ -3,16 +3,17 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "db": "npx prisma dev",
-    "start": "NODE_ENV=production node .output/server/index.mjs",
-    "typecheck": "nuxt typecheck",
-    "lint:fix": "eslint . --fix",
-    "lint": "oxlint --deny-warnings -D correctness -D suspicious -D perf && eslint --max-warnings 0 .",
     "build": "nuxt build",
+    "db": "npx prisma dev",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
+    "lint": "oxlint --deny-warnings -D correctness -D suspicious -D perf && eslint --max-warnings 0 .",
+    "lint:fix": "eslint . --fix",
+    "postinstall": "nuxt prepare && npx prisma generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare && npx prisma generate"
+    "seed": "npx prisma db seed",
+    "start": "NODE_ENV=production node .output/server/index.mjs",
+    "typecheck": "nuxt typecheck"
   },
   "dependencies": {
     "@prisma/adapter-pg": "^6.17.1",
